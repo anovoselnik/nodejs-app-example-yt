@@ -1,12 +1,15 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT;
-const host = process.env.HOST;
+const port = process.env.PORT || 3000;
+const host = process.env.HOST || '127.0.0.1';
 
 const knex = require('knex')({
   client: 'pg',
-  connection: process.env.DATABASE_URL,
+  connection: process.env.DATABASE_URL || 'postgres://postgres@localhost:5432/test',
   searchPath: ['knex', 'public'],
+  ssl: {
+    ca: process.env.CA_CERT
+  }
 });
 
 app.get('/', (req, res) => {
