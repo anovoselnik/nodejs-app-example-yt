@@ -8,7 +8,7 @@ console.log({
   connection: process.env.DATABASE_URL || 'postgres://postgres@localhost:5432/test',
   searchPath: ['knex', 'public'],
   ssl: {
-    ca: process.env.CA_CERT
+    rejectUnauthorized: false
   }
 });
 
