@@ -9,13 +9,10 @@ const knex = require('knex')({
     connectionString: process.env.DATABASE_URL || 'postgres://postgres@localhost:5432/test',
     ssl: {
       ca: process.env.CA_CERT,
+      rejectUnauthorized: false
     }
   },
   searchPath: ['knex', 'public'],
-  options: {
-    ca: process.env.CA_CERT,
-    rejectUnauthorized: false
-  }
 });
 
 app.get('/', (req, res) => {
