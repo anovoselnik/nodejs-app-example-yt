@@ -5,9 +5,14 @@ const host = process.env.PRIVATE_DOMAIN || '0.0.0.0';
 
 const knex = require('knex')({
   client: 'pg',
-  connection: process.env.DATABASE_URL || 'postgres://postgres@localhost:5432/test',
+  connection: {
+    connectionString: process.env.DATABASE_URL || 'postgres://postgres@localhost:5432/test',
+    ssl: {
+      ca: process.env.CA_CERT,
+    }
+  },
   searchPath: ['knex', 'public'],
-  ssl: {
+  options: {
     ca: process.env.CA_CERT,
     rejectUnauthorized: false
   }
