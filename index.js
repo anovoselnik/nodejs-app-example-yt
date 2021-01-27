@@ -3,15 +3,6 @@ const app = express();
 const port = process.env.PORT || 3000;
 const host = process.env.HOST || '127.0.0.1';
 
-console.log({
-  client: 'pg',
-  connection: process.env.DATABASE_URL || 'postgres://postgres@localhost:5432/test',
-  searchPath: ['knex', 'public'],
-  ssl: {
-    
-  }
-});
-
 const knex = require('knex')({
   client: 'pg',
   connection: process.env.DATABASE_URL || 'postgres://postgres@localhost:5432/test',
@@ -32,5 +23,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, host, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening at http://${host}:${port}`)
 });

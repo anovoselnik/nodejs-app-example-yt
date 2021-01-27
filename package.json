@@ -4,6 +4,7 @@
   "description": "Simple nodejs app",
   "main": "index.js",
   "scripts": {
+    "build": "npm ci",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Antonio Novoselnik (info@thecalmcoder.com)",
