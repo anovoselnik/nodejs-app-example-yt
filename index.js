@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
-const host = process.env.HOST || '127.0.0.1';
+const host = process.env.PRIVATE_DOMAIN || '0.0.0.0';
 
 const knex = require('knex')({
   client: 'pg',
