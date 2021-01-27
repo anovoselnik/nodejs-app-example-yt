@@ -3,6 +3,8 @@ const app = express();
 const port = process.env.PORT || 3000;
 const host = process.env.PRIVATE_DOMAIN || '0.0.0.0';
 
+console.log(process.env.CA_CERT);
+
 const knex = require('knex')({
   client: 'pg',
   connection: {
