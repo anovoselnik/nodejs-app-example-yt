@@ -10,7 +10,7 @@
   "author": "Antonio Novoselnik (info@thecalmcoder.com)",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "knex": "^0.21.16",
     "pg": "^8.5.1"
   }
